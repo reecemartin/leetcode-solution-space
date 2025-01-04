@@ -44,3 +44,5 @@ I began by just blindly running two for loops and looking for combos that worked
 inner loop only looks at the "rest" of the list. This required messing with the indices since the inner loop now has an artificially shrunken list. This works, but it is O(n^2) 
 which is not great (it doesn't use lots of memory though!). To fix it we can use a single loop and a dictionary to save past values we have seen. This now gives us ~O(n) time complexity
 which beats 53% of people, but our space complexity only beats 7% of people. Removing the silly lists in a dictionary thing gets me to 100% on time complexity and 10% on space complexity.
+I messed around a bit more with space complexity, but it basically seems like we are either going to get one or the other so I will be done with my third iteration which uses a set 
+instead of a dictionary.
