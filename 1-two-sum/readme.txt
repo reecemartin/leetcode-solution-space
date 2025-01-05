@@ -1,4 +1,4 @@
-January 3, 2024
+January 3, 2025
 
 Link: 
 https://leetcode.com/problems/two-sum/description/
