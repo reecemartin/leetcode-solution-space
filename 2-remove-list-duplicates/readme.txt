@@ -1,4 +1,4 @@
-January 4, 2025
+January 4, 2025 - Easy
 
 Link:
 https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/

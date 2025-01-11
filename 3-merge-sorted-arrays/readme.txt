@@ -1,4 +1,4 @@
-January 6, 2025
+January 6, 2025 - Easy
 
 Link:
 https://leetcode.com/problems/merge-sorted-array/description/
