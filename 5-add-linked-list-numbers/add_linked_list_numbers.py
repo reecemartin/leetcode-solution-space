@@ -70,7 +70,7 @@ class SolutionListAddition:
 
         while cur_node_1 or cur_node_2:
 
-            if cur_node_1 and cur_node_2:
+            if cur_node_1 and cur_node_2: # Both nodes exist
                 value = cur_node_1.val + cur_node_2.val + carry_over
                 cur_node_1.val = value % 10
                 carry_over = value // 10
@@ -78,7 +78,7 @@ class SolutionListAddition:
                 cur_node_1 = cur_node_1.next
                 prev_node_2 = cur_node_2
                 cur_node_2 = cur_node_2.next
-            elif cur_node_1:
+            elif cur_node_1: # cur_node_1 exists
                 value = cur_node_1.val + carry_over
                 cur_node_1.val = value % 10
                 carry_over = value // 10
@@ -92,7 +92,7 @@ class SolutionListAddition:
                 prev_node_2 = cur_node_2
                 cur_node_2 = cur_node_2.next
 
-        if carry_over != 0:
+        if carry_over != 0: # If we end with something still in the carry put it in a new node at the end, this handles the 9,9,9... case
             prev_node_1.next = ListNode(carry_over, None)
 
         return l1

@@ -1,4 +1,4 @@
-January 11, 2025 - Medium
+January 11, 2025 - Medium, Updated Janury 21, 2025
 
 Link: 
 https://leetcode.com/problems/add-two-numbers/description/
@@ -50,3 +50,12 @@ try to optimize.
 I ended up looking at how people were doing better, and as I guessed they are doing the additions in place and carrying values, which does make
 sense with the lists being in reversed order. I think my solution is a little less confusing to write, but it is much slower so I will make my task 
 for tomorrow be rewriting this the "right" way.
+
+On January 20, and 21 I worked on an updated solution so I could beat more submissions on performance (which I succeeded on), memory was as usual 
+marginally above the best performers. As mentioned above the fast way to solve the problem is to go over the list adding as we go, which works well 
+because the lists are given in reverse order (probably to make this easy). My first attempt to solve the problem (Jan 20th) was super long and messy
+because I put loops in if statements as opposed to the reverse which meant I had a lot of needless extra duplication instead of code that may or may
+not run depending on the situation. Once I got the compact function working on Jan 21st I ran it through LC and it told me the runtime performance
+was actually very bad, this concerned me because I was doing it the "right" way, but then I realized the issue was that I was using a print Linked List
+function nested within my outer function to debug and this was likely running a ton while the tests were running, artifically pushing up my run time.
+This is a reminder for the future to remove any such debugging stuff before submitting!
