@@ -97,8 +97,11 @@ class SolutionListAddition:
 
             while cur_node_1:
                 print(carry_over)
+                print(cur_node_1.next)
                 if cur_node_1.next == None:
-                    cur_node_1.next = ListNode(carry_over, None)
+                    value = (cur_node_1.val + carry_over)
+                    cur_node_1.val = value % 10
+                    cur_node_1.next = ListNode(value // 10, None)
                     return l1
                 elif cur_node_1.val + carry_over > 9:
                     print("Active")
