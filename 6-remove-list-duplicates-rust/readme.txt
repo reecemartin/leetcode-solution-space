@@ -55,4 +55,8 @@ Solution:
 
 Once again to try to keep moving forward in Rust, I am writing a Rust solution to the remove list duplicates problem I previously solved with Python. 
 As with last time I was trying to write Rust code I am getting tons of errors, but they are indeed very useful and most were easy to solve. The only
-problem which required any serious change was creating a copy of my input vec to iterate over while making actual changes to the other.
+problem which required any serious change was creating a copy of my input vec to iterate over while making actual changes to the other. 
+
+In order to get things to work I ended up changing my code to iterate over and then have a counter to see where we were index wise. The time performance
+was poor relative to the best solutions so I am going to see what I need to fix. I think the issue is I did a general solution instead of one that takes
+advantage of the list being in ascending order.
