@@ -7,5 +7,3 @@ Here are some problems I would like to solve, I will add to this as more problem
 
 Problems:
 - Existing Problems Solved in Python also solved in Rust
-- Recursive Towers of Hanoi
-- Problem 5 using an optimal speed method
