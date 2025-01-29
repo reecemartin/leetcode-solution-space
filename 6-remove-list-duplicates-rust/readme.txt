@@ -62,4 +62,4 @@ was poor relative to the best solutions so I am going to see what I need to fix.
 advantage of the list being in ascending order.
 
 In my updated code I start from the beginning and only keep track of the last unique number and the index of the last duplicate, basically doing
-no extra work beyond what is required.
+no extra work beyond what is required. This gave me time performance beating 100% and memory performance beating 85%!
