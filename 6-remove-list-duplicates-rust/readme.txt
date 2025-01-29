@@ -60,3 +60,6 @@ problem which required any serious change was creating a copy of my input vec to
 In order to get things to work I ended up changing my code to iterate over and then have a counter to see where we were index wise. The time performance
 was poor relative to the best solutions so I am going to see what I need to fix. I think the issue is I did a general solution instead of one that takes
 advantage of the list being in ascending order.
+
+In my updated code I start from the beginning and only keep track of the last unique number and the index of the last duplicate, basically doing
+no extra work beyond what is required.
