@@ -1,4 +1,4 @@
-February 2, 2025 - 
+February 2, 2025 - Medium
 
 Link:
 https://leetcode.com/problems/reverse-integer/description/
