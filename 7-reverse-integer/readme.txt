@@ -36,3 +36,19 @@ Solution:
 This problem seems smart but so little is specified I feel like a lot is ambiguous. I could just do some testing on strings and
 it seems pretty trivial, but it doesn't seem to respect the "spirit" of the question. A solution I think does and will work, is breaking
 the input up if its over a certain size and testing the "chunks" sizes respectively.
+
+That ^ turned out to be the wrong approach, the right approach was just breaking it into cases. If the value equaled the bound it was bad,
+if the value was too long, it was bad, then I needed to do a digit by digit comparison with the bound as a string, where our reversed, number
+could only have larger digits if there was an earlier digit which was smaller to "offset" it. Dealing with the leading 0's was not an issue,
+because Python drops those when going from String -> Int.
+
+
+Notes I wrote in my code initially:
+upper limit on int 2147483647 Not an Ok input
+lower limit on int -2147483648 Not an Ok input
+reverse upper 7463847412
+reverse lower 8463847412
+numbers less than 10 digits are fine
+numbers more than 10 digits are not fine
+intuition is that the max number is basically a palindrome, so upper is 2147447412, and lower is the same but negative, any version where a digit
+in the first half of the 10 is bigger would not fit, and in the second half would not fit when reversed 
