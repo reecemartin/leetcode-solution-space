@@ -44,6 +44,9 @@ because Python drops those when going from String -> Int.
 
 My solution once I trimmed extraneous case checking beats 80% on runtime and 70% on memory.
 
+I think its worth pointing out that the vagueness of this question and its constraints (no interviewer to tell you not do do "that") means a lot
+of people use very simple solutions that anyone could come up with if they knew it was allowed.
+
 
 Notes I wrote in my code initially:
 upper limit on int 2147483647 Not an Ok input
