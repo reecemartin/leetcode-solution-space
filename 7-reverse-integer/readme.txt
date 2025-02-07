@@ -42,6 +42,11 @@ if the value was too long, it was bad, then I needed to do a digit by digit comp
 could only have larger digits if there was an earlier digit which was smaller to "offset" it. Dealing with the leading 0's was not an issue,
 because Python drops those when going from String -> Int.
 
+My solution once I trimmed extraneous case checking beats 80% on runtime and 70% on memory.
+
+I think its worth pointing out that the vagueness of this question and its constraints (no interviewer to tell you not do do "that") means a lot
+of people use very simple solutions that anyone could come up with if they knew it was allowed.
+
 
 Notes I wrote in my code initially:
 upper limit on int 2147483647 Not an Ok input
