@@ -39,3 +39,7 @@ Constraints:
 Solution:
 Initially was confused into thinking it was no repeats sequentially, not in the entire substring, but I can still use 
 my code for checking if the character is a repeat, since repeats will be between any such substrings.
+
+Turned out I was wrong, trying to adapt the code didn't make sense so I tried to rewrite it to simplify, and eventually
+I got it working, albeit with 5% runtime and 11% memory performance, not good! I will try and optimize. Second version beats
+47% on memory and about 10% on runtime.
