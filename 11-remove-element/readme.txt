@@ -59,3 +59,5 @@ Solution:
 I foolishly wrote the function a few times trying to combine the counting logic with the logic for moving elements. In reality I just needed to think
 the problem through (we are really just "sliding" numbers over and every time we see a val or slide a number we get more room to slide) once I did this
 it worked well but with poor speed and meh memory performance.
+
+Turns out my terrible time performance was just about including a print statement I left in. 
