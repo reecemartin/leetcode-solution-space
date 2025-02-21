@@ -6,4 +6,5 @@ high level and high performance.
 Here are some problems I would like to solve, I will add to this as more problems come to mind.
 
 Problems:
+- Implement Binary Search in Python and then in Rust
 - Existing Problems Solved in Python also solved in Rust
