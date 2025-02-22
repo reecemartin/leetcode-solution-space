@@ -1,4 +1,5 @@
-pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
+// Attempt 1
+pub fn find_median_sorted_arrays_bad(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
 
         // Validated: Takes a vector and returns the index of the middle number of an odd length vector, or the left of middle in an even length vector, starting
         // at start and stopping before stop
@@ -39,8 +40,8 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
             }
                 
             let length = nums.len();
-            let mut half = length / 2;
-            let mut hind = length - 1;
+            let mut half: usize = length / 2;
+            let mut hind: usize = length - 1;
             let mut lind = 0;
             let mut current = nums[half];
 
@@ -73,16 +74,16 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
         loop {
             let nums1_middle_index = find_middle(nums1_start, nums1_stop as i32);
 
-            print!("Middle of Nums 1: {}\n", nums1[nums1_middle_index as usize]);
+            print!("Middle of Nums 1: {}\n", nums1[nums1_middle_index as usize]); // REMOVE ME
 
             let loc_in_nums2 = find_index(nums2.clone(), nums1[nums1_middle_index as usize]);
 
-            print!("Located in Nums2: {:?}\n", loc_in_nums2);
+            print!("Located in Nums2: {:?}\n", loc_in_nums2); // REMOVE ME
 
             let g_l1 = find_greater_and_less_than(nums1.clone(), nums1_middle_index, true);
             let g_l2 = find_greater_and_less_than(nums2.clone(), loc_in_nums2[0] as i32, loc_in_nums2[1] == 1);
-            print!("{:?}\n", g_l1);
-            print!("{:?}\n", g_l2);
+            print!("{:?}\n", g_l1); // REMOVE ME
+            print!("{:?}\n", g_l2); // REMOVE ME
             print!("{:?}\n", g_l1[0] + g_l2[0] - (g_l1[1] + g_l2[1]));
             if (g_l1[0] + g_l2[0] - (g_l1[1] + g_l2[1])).abs() <= 1 {
                 return nums1[nums1_middle_index as usize]
@@ -90,24 +91,26 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
 
             let nums2_middle_index = find_middle(nums2_start, nums2_stop as i32);
 
-            print!("Middle of Nums 2: {}\n", nums2[nums2_middle_index as usize]);
+            print!("Middle of Nums 2: {}\n", nums2[nums2_middle_index as usize]); // REMOVE ME
 
             let loc_in_nums1 = find_index(nums1.clone(), nums2[nums2_middle_index as usize]);
 
-            print!("Located in Nums1: {:?}\n", loc_in_nums1);
+            print!("Located in Nums1: {:?}\n", loc_in_nums1); // REMOVE ME
 
             let g_l1 = find_greater_and_less_than(nums2.clone(), nums2_middle_index, true);
             let g_l2 = find_greater_and_less_than(nums1.clone(), loc_in_nums1[0] as i32, loc_in_nums1[1] == 1);
-            print!("{:?}\n", g_l1);
-            print!("{:?}\n", g_l2);
+            print!("{:?}\n", g_l1); // REMOVE ME
+            print!("{:?}\n", g_l2); // REMOVE ME
             if (g_l1[0] + g_l2[0] - (g_l1[1] + g_l2[1])).abs() <= 1 {
                 return nums2[nums2_middle_index as usize]
             } 
 
-            print!("\n\n CHECK");
-            print!("{}\n",loc_in_nums2[0]);
-            print!("{}",nums2_middle_index as usize);
-            print!("\n\n");
+            // Probably can use whether the above is negative to do the adjustments for where we are looking
+
+            print!("\n\n CHECK"); // REMOVE ME
+            print!("{}\n",loc_in_nums2[0]); // REMOVE ME
+            print!("{}",nums2_middle_index as usize); // REMOVE ME
+            print!("\n\n"); // REMOVE ME
 
             if loc_in_nums2[0] - 1 < nums2[nums2_middle_index as usize] as usize {
                 nums1_start = nums1_middle_index;
@@ -121,18 +124,40 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
                 nums2_stop = nums2_middle_index as usize;
             }
 
-            print!("\n\n");
-            print!("{}\n",nums1_start);
-            print!("{}",nums1_stop);
-            print!("\n\n");
+            print!("\n\n"); // REMOVE ME
+            print!("{}\n",nums1_start); // REMOVE ME
+            print!("{}",nums1_stop); // REMOVE ME
+            print!("\n\n"); // REMOVE ME
         }
 
 
 }
 
+// Attempt 2
+pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
+
+        // Validated: Takes a vector and returns the index of the middle number of an odd length vector, or the left of middle in an even length vector, starting
+        // at start and stopping at stop inclusive 0 1 2 3 4
+        fn find_middle_index(start: i32, stop: i32) -> i32 {
+            if ((stop + 1) - (start)) % 2 == 0{
+                (((stop + 1) - (start)) / 2) - 1
+            } else {
+                ((stop + 1) - (start) - 1) / 2
+            }
+        }
+
+        find_middle_index(0, nums1.len() as i32)
+        // Function to validate median given two indices and two vecs
+
+        
+}
+
 fn main() {
-    let mut vec1 = vec![1, 2];
-    let mut vec2 = vec![3, 4];
+    // 1,3    2       -> 2
+    // 1,2    3,4     -> 2.5
+
+    let mut vec1 = vec![1, 3];
+    let mut vec2 = vec![2];
 
     print!("Vector 1: {:?}\n", vec1);
     print!("Vector 2: {:?}\n", vec2);

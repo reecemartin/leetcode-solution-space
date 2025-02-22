@@ -46,10 +46,5 @@ example, assume we have the lists [1,2,3,4,5] and [1,5,10,15] searching for the 
 a 5 element list with two bigger and two smaller has 3 elements larger than it in a four element list. Since we are looking for the 5th number overall, 
 that number must be the smaller of the next two elements between the two lists (this may not be the way we want to extend this algo).
 
-
-
-If an odd number of elements:
-
-
-
-If an even number of elements:
+Coming back to this problem the next day, I am realizing the binary search is just completely unnecessary. All we need to do is compare medians, going to 
+see if I can solve it now that its much simpler - keeping all my old code though because hey, I wrote a bunch of Rust and did learn from it!
